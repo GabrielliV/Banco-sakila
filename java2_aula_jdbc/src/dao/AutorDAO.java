@@ -37,13 +37,21 @@ public class AutorDAO {
            PreparedStatement p1 = connection.prepareStatement(SQL); 
            p1.setString(1, autor.getNome());
            p1.setInt(2, autor.getAutor_id());
-        }catch (SQLException ex) {
+           p1.execute();
+        } catch (SQLException ex) {
             throw new Exception(ex);
         }
     }
     
-    public void delete(Autor autor) {
-        
+    public void delete(Autor autor) throws Exception {
+        String SQL = "DELETE FROM AUTOR WHERE AUTOR_ID = ?";
+        try {
+           PreparedStatement p1 = connection.prepareStatement(SQL); 
+           p1.setInt(1, autor.getAutor_id());
+           p1.execute();
+        } catch (SQLException ex) {
+            throw new Exception(ex);
+        }
     }
     
     public Autor findById(int id) {
@@ -54,7 +62,7 @@ public class AutorDAO {
         //Lista para manter os valores do ResulSet
         List<Autor> list = new ArrayList<>();
         Autor objeto;
-        String SQL = "SELECT * FRONT AUTOR";
+        String SQL = "SELECT * FROM AUTOR";
         try {
             //Prepara a SQL
             PreparedStatement p1 = connection.prepareStatement(SQL);
