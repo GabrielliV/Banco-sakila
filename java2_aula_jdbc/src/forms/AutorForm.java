@@ -43,7 +43,6 @@ public class AutorForm extends javax.swing.JFrame {
         Autor_ID = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Nome = new javax.swing.JTextField();
-        btnAtualizar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -60,13 +59,6 @@ public class AutorForm extends javax.swing.JFrame {
         jLabel1.setText("Autor ID:");
 
         jLabel2.setText("Nome:");
-
-        btnAtualizar.setText("Atualizar");
-        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtualizarActionPerformed(evt);
-            }
-        });
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -123,14 +115,12 @@ public class AutorForm extends javax.swing.JFrame {
                                     .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnAtualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(39, 39, 39)
                         .addComponent(btnSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(51, 51, 51)
                         .addComponent(btnRemover)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNovo)))
+                        .addGap(39, 39, 39)
+                        .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -146,7 +136,6 @@ public class AutorForm extends javax.swing.JFrame {
                     .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtualizar)
                     .addComponent(btnSalvar)
                     .addComponent(btnRemover)
                     .addComponent(btnNovo))
@@ -167,18 +156,13 @@ public class AutorForm extends javax.swing.JFrame {
             if (mode.equals("INS"))  {
                 autorDAO.save(autor); //Pra salvar no banco
             } else if (mode.equals("UPD")) {
-                autorDAO.save(autor);
+                autorDAO.update(autor);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
         listar();
     }//GEN-LAST:event_btnSalvarActionPerformed
-
-    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        Autor autor = new Autor();
-        
-    }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         listar();
@@ -267,7 +251,6 @@ public class AutorForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Autor_ID;
     private javax.swing.JTextField Nome;
-    private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnRemover;
     private javax.swing.JButton btnSalvar;

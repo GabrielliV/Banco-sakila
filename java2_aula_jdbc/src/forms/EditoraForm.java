@@ -152,7 +152,7 @@ public class EditoraForm extends javax.swing.JFrame {
             if (mode.equals("INS"))  {
                 editoraDAO.save(editora); //Pra salvar no banco
             } else if (mode.equals("UPD")) {
-                editoraDAO.save(editora);
+                editoraDAO.update(editora);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());

@@ -21,7 +21,7 @@ public class ConnectionJDBC {
             
             // Dados de conexão
             String servidor = "192.168.232.3";
-            String database = "/databases/aula07.fdb";
+            String database = "/databases/prova.fdb";
             String user = "SYSDBA";
             String password = "masterkey";
             String url = "jdbc:firebirdsql:" + servidor + "/3050:" 

@@ -17,7 +17,7 @@ public class EstudanteDAO {
     public EstudanteDAO() throws Exception {
         connection = ConnectionJDBC.getConnection();
     }
-    
+    //Salvar
     public void save(Estudante estudante) throws Exception {
         String SQL = "INSERT INTO ESTUDANTE VALUES (?, ?, ?, ?, ?)";
         try {
@@ -32,6 +32,7 @@ public class EstudanteDAO {
           throw new Exception(ex);
       }
     }
+    // Atualizar
     public void update(Estudante estudante) throws Exception {
         String SQL = "UPDATE ESTUDANTE SET NOME=?, CURSO=?, DATA_MATRICULA=?, STATUS=? WHERE ESTUDANTE_ID=?";
         try {
@@ -46,6 +47,7 @@ public class EstudanteDAO {
             throw new Exception(ex);
         }
     }
+    // Deletar
     public void delete(Estudante estudante) throws Exception {
         String SQL = "DELETE FROM ESTUDANTE WHERE ESTUDANTE_ID = ?";
         try {
@@ -56,9 +58,11 @@ public class EstudanteDAO {
             throw new Exception(ex);
         }
     }
+    // Encontrar pela ID
     public Estudante findById(int id) {
         return new Estudante();
     }
+    // Encontrar tudo
     public List<Estudante> findAll() throws Exception {
         List<Estudante> list = new ArrayList<>();
         Estudante objeto;

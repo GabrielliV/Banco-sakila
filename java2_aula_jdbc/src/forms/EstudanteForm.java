@@ -200,7 +200,7 @@ public class EstudanteForm extends javax.swing.JFrame {
             if (mode.equals("INS"))  {
                 estudanteDAO.save(estudante); 
             } else if (mode.equals("UPD")) {
-                estudanteDAO.save(estudante);
+                estudanteDAO.update(estudante);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());

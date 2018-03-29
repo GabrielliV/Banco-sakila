@@ -3,6 +3,7 @@ package model;
 import java.util.Date;
 
 public class Estudante {
+    // Faz apenas os getters e setters
     private int estudante_id;
     private String nome;
     private String curso;
